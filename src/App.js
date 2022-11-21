@@ -1,49 +1,98 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
+import { Grid, Typography } from "@mui/material";
+import { CardComp } from "./component/CardComp";
+import { DeezNuts } from "./component/Appbar";
+import "./index.css";
 function App() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography color="inherit" sx={{ flexGrow: 1 }}>
-            Team.
-          </Typography>
+    <Box
+      sx={{
+        flexGrow: 1,
+        backgroundColor: "#F5F5F5",
+        maxWidth: "100vw",
+        margin: "0",
+        overflowX: "hidden",
+      }}
+    >
+      <link
+        href="https://fonts.googleapis.com/css?family=Mulish"
+        rel="stylesheet"
+      ></link>
 
-          <Typography color="inherit" sx={{ flexGrow: 0.1 }}>
-            Products
-          </Typography>
-
-          <Typography color="inherit" sx={{ flexGrow: 0.1 }}>
-            Services
-          </Typography>
-
-          <Typography color="inherit" sx={{ flexGrow: 0.1 }}>
-            Contact
-          </Typography>
-
-          <Typography color="inherit" sx={{ flexGrow: 0.1 }}>
-            Login
-          </Typography>
-          <Button color="inherit" variant="success-outlined">
-            Get Access
-          </Button>
-        </Toolbar>
-      </AppBar>
+      <DeezNuts />
+      <Typography
+        sx={{
+          fontFamily: "Mulish",
+          fontWeight: "1000",
+          fontSize: "48px",
+          marginLeft: "140px",
+          marginTop: "160px",
+        }}
+      >
+        Blog posts
+      </Typography>
+      <Typography
+        sx={{
+          fontFamily: "Mulish",
+          fontSize: "18px",
+          color: "#6D7D8B",
+          marginLeft: "140px",
+          marginTop: "20px",
+        }}
+      >
+        Our latest updates and blogs about managing your team
+      </Typography>
+      <Box sx={{ marginLeft: "20%" }}>
+        <Grid
+          container
+          spacing={1}
+          sx={{
+            width: "120vw",
+            marginLeft: "3px",
+            display: "flex",
+            flexDiraction: "column",
+          }}
+        >
+          {new Array(3).fill(0).map((_, index) => (
+            <Grid item xs={2}>
+              <CardComp />
+            </Grid>
+          ))}
+        </Grid>
+        <Grid
+          container
+          spacing={1}
+          sx={{
+            width: "120vw",
+            marginLeft: "3px",
+            display: "flex",
+            flexDiraction: "column",
+          }}
+        >
+          {new Array(3).fill(0).map((_, index) => (
+            <Grid item xs={2}>
+              <CardComp />
+            </Grid>
+          ))}
+        </Grid>
+        <Grid
+          container
+          spacing={1}
+          sx={{
+            width: "120vw",
+            marginLeft: "3px",
+            display: "flex",
+            flexDiraction: "column",
+          }}
+        >
+          {new Array(3).fill(0).map((_, index) => (
+            <Grid item xs={2}>
+              <CardComp />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Box>
   );
 }
